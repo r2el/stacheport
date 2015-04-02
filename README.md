@@ -16,7 +16,7 @@ Stacheport can handle collections of arrays, objects and closures while also doi
 
 [end view file]
 
-
+```php
 $functions= new stdClass();
 
 $functions->format_phone= function($phone,$phone2)
@@ -27,13 +27,10 @@ $functions->format_phone= function($phone,$phone2)
 $template= View::template('report');
 
 echo Stache::factory($template)
-
 	->bind('records',$records)
-	
 	->bind('functions',$functions)
-	
 	->render();
-	
+```
 
 It can also handle grouping by a particular field and repeating the template for each unique field it is grouping by:
 
@@ -51,7 +48,7 @@ It can also handle grouping by a particular field and repeating the template for
 
 [end view file]
 
-
+```php
 $functions=new stdClass();
 
 $functions->even_odd = function($counter)
@@ -62,13 +59,10 @@ $functions->even_odd = function($counter)
 $template= View::template('report');
 
 echo Stache::factory($template)
-
   ->bind('records',$records)
-  
   ->bind('functions',$functions)
-  
   ->group_by('records','salesperson')
-  
   ->render();
+```
 
 This would produce a report for each salesperson totals with date totals.		
