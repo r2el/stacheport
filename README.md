@@ -36,7 +36,7 @@ It can also handle grouping by a particular field and repeating the template for
 
 [begin view file]
 ```
-{{records{0}.salesperson}}
+{{records[0].salesperson}}
 
 {{#records}}
 				<div class='{{ functions.even_odd_row({{counter}}) }}' {{date}} {{sales}}</div>
