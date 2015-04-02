@@ -26,7 +26,7 @@ $functions->format_phone= function($phone,$phone2)
 
 $template= View::template('report');
 
-echo Stache::factory($template)
+echo Stacheport::factory($template)
 	->bind('records',$records)
 	->bind('functions',$functions)
 	->render();
@@ -58,7 +58,7 @@ $functions->even_odd = function($counter)
 
 $template= View::template('report');
 
-echo Stache::factory($template)
+echo Stacheport::factory($template)
   ->bind('records',$records)
   ->bind('functions',$functions)
   ->group_by('records','salesperson')
