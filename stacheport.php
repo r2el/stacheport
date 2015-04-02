@@ -1,3 +1,4 @@
+<?php
 class Stacheport 
 {
 		private $template='',$group_by=false,$group_collection='',$group_field='';
