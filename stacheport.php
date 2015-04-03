@@ -277,8 +277,6 @@ class Stacheport
 
 	public function render()
 	{
-		//$this->template=preg_replace('/\[\[/is','{{',$this->template);
-		//$this->template=preg_replace('/\]\]/is','}}',$this->template);
 		if ($this->group_by)
 		{
 			$data = $this->process_group_by();
