@@ -1,4 +1,15 @@
 <?php
+
+/*
+ * This file is part of stacheport
+ *
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ *
+ */
+
 class Stacheport
 {
         private $template='',$group_by=false,$group_collection='',$group_field='';
