@@ -24,16 +24,15 @@ echo Stacheport::factory($template)
 [begin report view file]
 ```
 {{#records}}
-	<tr><td>{{ functions.format_name('{{name}}') }}</td><td>Sales</td></tr>
+	<tr><td>{{date}}</td><td>{{ functions.format_name('{{salesperson}}') }}</td><td>{{sale_amount}}</td></tr>
 {{/records}}
 {{#records.totals}}
-	<tr><td>Total Count</td><td>{{counter}}</td><td>{{sales}}</td></tr>
+	<tr><td>Total Sales</td><td>{{counter}}</td><td>{{sale_amount}}</td></tr>
 {{/records.totals}}
 ```
 [end view file]
 
 It can also handle grouping by a particular field and repeating the template for each unique field it is grouping by:
-
 
 ```php
 $functions=new stdClass();
@@ -63,7 +62,7 @@ This would produce a report for each salesperson totals with date totals.
 {{/records}}
 
 {{#records.totals}}
-	<div>{{date}} {{sales_amount}}</div>
+	<div>Total: {{sales_amount}}</div>
 {{/records.totals}}
 ```
 [end view file]
