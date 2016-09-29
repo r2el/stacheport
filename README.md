@@ -6,11 +6,7 @@ Stacheport is a small, simple to use report template engine with mustache-like s
 Stacheport can handle collections of arrays, objects and closures while also doing sums of numerical fields in the background. For instance:
 
 ```php
-$functions= (object) ['format_name' => function($name)
-  {
-    return uc_words($name);
-  }
-];
+$functions= (object) ['format_name' => function($name) {return uc_words($name);}];
 
 $template= View::template('report');
 
@@ -34,12 +30,7 @@ echo Stacheport::factory($template)
 It can also handle grouping by a particular field and repeating the template for each unique field it is grouping by:
 
 ```php
-$functions=new stdClass();
-
-$functions->even_odd = function($counter)
-{
-	return ($counter %2==0)?'even':'odd';
-};
+$functions= (object) ['even_odd' => function($counter) {return ($counter %2==0)?'even':'odd';}];
 
 $template= View::template('report');
 
